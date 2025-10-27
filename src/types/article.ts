@@ -21,6 +21,14 @@ export interface Article {
     keywords: string[];
     slug?: string;
   };
+  // Enhanced SEO fields
+  metaTitle?: string;
+  metaDescription?: string;
+  focusKeyword?: string;
+  keywords?: string[];
+  schema?: any; // JSON-LD structured data
+  internalLinks?: string[];
+  externalLinks?: string[];
 }
 
 export interface ArticleContent {
@@ -28,7 +36,7 @@ export interface ArticleContent {
   content?: string;
   level?: number;
   items?: string[];
-  variant?: 'info' | 'warning' | 'success' | 'error';
+  variant?: 'info' | 'warning' | 'success' | 'error' | 'tip' | 'pro-tip' | 'note';
   ctaType?: 'package-builder' | 'consultation' | 'contact' | 'trial';
   author?: string;
   columns?: string[];

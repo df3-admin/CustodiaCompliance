@@ -15,6 +15,27 @@ build/
 .env.test.local
 .env.production.local
 
+# Google Cloud credentials
+credentials.json
+*.json.encrypted
+gcloud_service_account_key.json
+service-account-key.json
+
+# Database files (keep schema.sql but ignore data dumps)
+*.db
+*.sqlite
+*.sqlite3
+database/*.dump
+database/*.backup
+
+# API keys and tokens
+*.pem
+*.key
+*.p12
+*.pfx
+api-keys.json
+secrets.json
+
 # IDE
 .vscode/
 .idea/
@@ -73,3 +94,12 @@ public
 # Temporary folders
 tmp/
 temp/
+
+# Cache and progress files
+scripts/.cache/
+scripts/.progress/
+scripts/output/
+
+# AI-generated content backup
+config/*.backup
+*.backup.json

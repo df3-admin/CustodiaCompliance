@@ -5,9 +5,11 @@ import { Helmet } from 'react-helmet-async';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, Shield, CheckCircle, AlertTriangle, Info, ExternalLink, Quote, ServerCrash } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, Shield, CheckCircle, AlertTriangle, Info, ExternalLink, Quote, ServerCrash, Star } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import AdPlaceholder from '../components/AdPlaceholder';
+import ComplianceChat from '../components/ComplianceChat';
 import { Article, ArticleContent } from '../types/article';
 
 
@@ -19,7 +21,7 @@ const ArticleDetail = () => {
   const [error, setError] = useState<string | null>(null);
   const [errorDetails, setErrorDetails] = useState<string | null>(null);
 
-  const baseUrl = process.env.NEXT_PUBLIC_BLOG_URL || 'https://your-blog-domain.com';
+  const baseUrl = import.meta.env.VITE_BLOG_URL || 'https://custodiacompliance.com';
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -115,18 +117,18 @@ const ArticleDetail = () => {
     switch (content.type) {
       case 'paragraph':
         return (
-          <p key={index} className="text-gray-700 leading-relaxed mb-6 text-lg">
-            <ReactMarkdown>{content.content}</ReactMarkdown>
-          </p>
+          <div key={index} className="text-gray-700 leading-relaxed mb-6 text-base sm:text-lg break-words">
+            <ReactMarkdown unwrapDisallowed={true}>{content.content}</ReactMarkdown>
+          </div>
         );
       
       case 'heading':
         const HeadingTag = `h${content.level || 2}` as keyof JSX.IntrinsicElements;
         const headingClasses = {
-          1: 'text-4xl font-bold text-gray-900 mb-8 mt-12',
-          2: 'text-3xl font-bold text-gray-900 mb-6 mt-10',
-          3: 'text-2xl font-semibold text-gray-900 mb-4 mt-8',
-          4: 'text-xl font-semibold text-gray-900 mb-3 mt-6'
+          1: 'text-3xl sm:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 mt-8 sm:mt-12',
+          2: 'text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 mt-6 sm:mt-10',
+          3: 'text-xl sm:text-2xl font-semibold text-gray-900 mb-3 sm:mb-4 mt-4 sm:mt-8',
+          4: 'text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 mt-3 sm:mt-6'
         };
         return (
           <HeadingTag key={index} className={headingClasses[content.level as keyof typeof headingClasses] || headingClasses[2]}>
@@ -144,7 +146,7 @@ const ArticleDetail = () => {
               {Array.isArray(content.items) && content.items.map((item, itemIndex) => {
                 if (!item) return null;
                 return (
-                  <div key={itemIndex} className="text-lg leading-relaxed">
+                  <div key={itemIndex} className="text-base sm:text-lg leading-relaxed break-words">
                     <ReactMarkdown unwrapDisallowed={true}>{item}</ReactMarkdown>
                   </div>
                 );
@@ -158,21 +160,27 @@ const ArticleDetail = () => {
           info: 'bg-blue-50 border-blue-200 text-blue-800',
           warning: 'bg-yellow-50 border-yellow-200 text-yellow-800',
           success: 'bg-green-50 border-green-200 text-green-800',
-          error: 'bg-red-50 border-red-200 text-red-800'
+          error: 'bg-red-50 border-red-200 text-red-800',
+          tip: 'bg-purple-50 border-purple-200 text-purple-800',
+          'pro-tip': 'bg-indigo-50 border-indigo-200 text-indigo-800',
+          note: 'bg-gray-50 border-gray-200 text-gray-800'
         };
         const calloutIcons = {
           info: Info,
           warning: AlertTriangle,
           success: CheckCircle,
-          error: AlertTriangle
+          error: AlertTriangle,
+          tip: Info,
+          'pro-tip': Star,
+          note: Info
         };
         const Icon = calloutIcons[content.variant || 'info'];
         
         return (
-          <div key={index} className={`border-l-4 p-6 mb-8 rounded-r-lg ${calloutVariants[content.variant || 'info']}`}>
+          <div key={index} className={`border-l-4 p-4 sm:p-6 mb-8 rounded-r-lg ${calloutVariants[content.variant || 'info']}`}>
             <div className="flex items-start gap-3">
               <Icon className="w-6 h-6 flex-shrink-0 mt-0.5" />
-              <p className="text-lg font-medium"><ReactMarkdown>{content.content}</ReactMarkdown></p>
+              <div className="text-base sm:text-lg font-medium"><ReactMarkdown unwrapDisallowed={true}>{content.content}</ReactMarkdown></div>
             </div>
           </div>
         );
@@ -248,11 +256,11 @@ const ArticleDetail = () => {
               <Quote className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
               <div>
                 <blockquote className="text-lg italic text-gray-800 mb-2">
-                  <ReactMarkdown>{content.content}</ReactMarkdown>
+                  <ReactMarkdown unwrapDisallowed={true}>{content.content}</ReactMarkdown>
                 </blockquote>
                 {content.author && (
                   <cite className="text-sm text-gray-600 font-medium">
-                    — <ReactMarkdown>{content.author}</ReactMarkdown>
+                    — <ReactMarkdown unwrapDisallowed={true}>{content.author}</ReactMarkdown>
                   </cite>
                 )}
               </div>
@@ -266,12 +274,12 @@ const ArticleDetail = () => {
             {content.content && (
               <h4 className="text-xl font-semibold text-gray-900 mb-4"><ReactMarkdown>{content.content}</ReactMarkdown></h4>
             )}
-            <div className="overflow-x-auto">
+            <div className="table-scroll-container overflow-x-auto">
               <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
                 <thead className="bg-gray-50">
                   <tr>
                     {Array.isArray(content.columns) && content.columns.map((column, colIndex) => (
-                      <th key={colIndex} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">
+                      <th key={colIndex} className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">
                         <ReactMarkdown>{column}</ReactMarkdown>
                       </th>
                     ))}
@@ -283,7 +291,7 @@ const ArticleDetail = () => {
                     return (
                       <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                         {Array.isArray(row) && row.map((cell, cellIndex) => (
-                          <td key={cellIndex} className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <td key={cellIndex} className="px-4 sm:px-6 py-4 text-sm text-gray-900 break-words">
                             <ReactMarkdown>{cell}</ReactMarkdown>
                           </td>
                         ))}
@@ -336,6 +344,32 @@ const ArticleDetail = () => {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        );
+      
+      case 'stats':
+        return (
+          <div key={index} className="mb-8">
+            {content.title && (
+              <h4 className="text-xl font-semibold text-gray-900 mb-6"><ReactMarkdown>{content.title}</ReactMarkdown></h4>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Array.isArray(content.stats) && content.stats.map((stat, statIndex) => (
+                <div key={statIndex} className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border border-blue-200 text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">
+                    <ReactMarkdown>{stat.value}</ReactMarkdown>
+                  </div>
+                  <div className="text-lg font-semibold text-gray-900 mb-2">
+                    <ReactMarkdown>{stat.label}</ReactMarkdown>
+                  </div>
+                  {stat.description && (
+                    <div className="text-sm text-gray-600">
+                      <ReactMarkdown>{stat.description}</ReactMarkdown>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         );
@@ -423,9 +457,9 @@ const ArticleDetail = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Enhanced SEO with Helmet */}
       <Helmet>
-        <title>{article.seo?.metaTitle || article.title}</title>
-        <meta name="description" content={article.seo?.metaDescription || article.excerpt} />
-        <meta name="keywords" content={article.seo?.keywords?.join(', ') || ''} />
+        <title>{article.metaTitle || article.seo?.metaTitle || article.title}</title>
+        <meta name="description" content={article.metaDescription || article.seo?.metaDescription || article.excerpt} />
+        <meta name="keywords" content={article.keywords?.join(', ') || article.seo?.keywords?.join(', ') || article.tags.join(', ')} />
         <link rel="canonical" href={`${baseUrl}/blog/${article.slug}`} />
         
         {/* Open Graph Tags */}
@@ -450,6 +484,104 @@ const ArticleDetail = () => {
         
         <meta name="robots" content="index, follow" />
         <meta name="author" content={article.author} />
+        
+        {/* JSON-LD Schema Markup */}
+        {article.schema && (
+          <script type="application/ld+json">
+            {JSON.stringify(article.schema)}
+          </script>
+        )}
+        
+        {/* Default Article Schema if no custom schema */}
+        {!article.schema && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              headline: article.title,
+              description: article.excerpt,
+              image: `${baseUrl}/${article.image}`,
+              author: {
+                '@type': 'Person',
+                name: article.author
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'Custodia, LLC',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: `${baseUrl}/assets/custodia logo transparent.png`
+                },
+                sameAs: [
+                  'https://www.linkedin.com/company/custodiallc',
+                  'https://twitter.com/custodia_llc'
+                ]
+              },
+              datePublished: new Date(article.published_date).toISOString(),
+              dateModified: new Date(article.updated_date || article.published_date).toISOString(),
+              mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': `${baseUrl}/blog/${article.slug}`
+              },
+              keywords: article.keywords?.join(', ') || article.tags.join(', '),
+              wordCount: article.content.reduce((count, block) => {
+                if (block.type === 'paragraph' && block.content) {
+                  return count + block.content.split(' ').length;
+                }
+                return count;
+              }, 0)
+            })}
+          </script>
+        )}
+        
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: baseUrl
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: `${baseUrl}/blog`
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: article.title,
+                item: `${baseUrl}/blog/${article.slug}`
+              }
+            ]
+          })}
+        </script>
+        
+        {/* Organization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Custodia, LLC',
+            url: baseUrl,
+            logo: `${baseUrl}/assets/custodia logo transparent.png`,
+            description: 'Your complete GRC department for software companies. Expert compliance solutions for SOC 2, ISO 27001, HIPAA, PCI DSS, and more.',
+            sameAs: [
+              'https://www.linkedin.com/company/custodiallc',
+              'https://twitter.com/custodia_llc'
+            ],
+            contactPoint: {
+              '@type': 'ContactPoint',
+              contactType: 'Customer Support',
+              email: 'info@custodiallc.com'
+            }
+          })}
+        </script>
       </Helmet>
       
       <Navigation />
@@ -457,7 +589,7 @@ const ArticleDetail = () => {
       {/* Back to Blog */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors">
+          <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors min-h-[44px]">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Blog
           </Link>
@@ -476,10 +608,10 @@ const ArticleDetail = () => {
             <Badge className="bg-blue-600 text-white mb-4">
               {article.category}
             </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
               {article.title}
             </h1>
-            <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
+            <p className="text-lg sm:text-xl text-gray-100 mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-md">
               {article.excerpt}
             </p>
           </div>
@@ -509,7 +641,17 @@ const ArticleDetail = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-8 lg:p-12">
               {Array.isArray(article.content) ? (
-                article.content.map((content, index) => renderContent(content, index))
+                article.content.map((content, index) => (
+                  <div key={index}>
+                    {renderContent(content, index)}
+                    {/* Insert ad after every 4th content block */}
+                    {(index + 1) % 4 === 0 && index < article.content.length - 1 && (
+                      <div className="my-8">
+                        <AdPlaceholder size="rectangle" />
+                      </div>
+                    )}
+                  </div>
+                ))
               ) : (
                 <div className="text-red-600 font-semibold">
                   Error: Article content could not be displayed. It may be malformed.
@@ -555,12 +697,9 @@ const ArticleDetail = () => {
           
           {/* Sidebar - Desktop Only */}
           <div className="lg:col-span-1 hidden lg:block">
-            <div className="sticky top-16 flex items-center justify-center min-h-[calc(100vh-4rem)] py-8">
-              {/* Placeholder for future sidebar content */}
-              <div className="text-center text-gray-500">
-                <Shield className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-                <p className="text-sm">Sidebar content can be added here</p>
-              </div>
+            <div className="sticky top-16 space-y-6">
+              {/* AI Compliance Chat */}
+              <ComplianceChat />
             </div>
           </div>
         </div>

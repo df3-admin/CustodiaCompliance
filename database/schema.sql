@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS articles (
     slug VARCHAR(255) UNIQUE NOT NULL,
     title VARCHAR(500) NOT NULL,
     author VARCHAR(255) NOT NULL,
+    author_avatar VARCHAR(500),
     published_date TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_date TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     image VARCHAR(500),
@@ -18,10 +19,19 @@ CREATE TABLE IF NOT EXISTS articles (
     category VARCHAR(100),
     tags TEXT[],
     excerpt TEXT,
-    content TEXT NOT NULL,
+    content JSONB NOT NULL,
     read_time VARCHAR(50),
-    seo JSONB,
-    related_articles UUID[]
+        featured BOOLEAN DEFAULT false,
+        seo JSONB,
+        related_articles UUID[],
+        -- Enhanced SEO fields
+        meta_title VARCHAR(60),
+        meta_description VARCHAR(155),
+        focus_keyword VARCHAR(100),
+        keywords TEXT[],
+        schema_data JSONB,
+        internal_links TEXT[],
+        external_links TEXT[]
 );
 
 -- Create indexes for articles table
@@ -32,18 +42,18 @@ CREATE INDEX IF NOT EXISTS idx_articles_tags ON articles USING GIN(tags);
 CREATE INDEX IF NOT EXISTS idx_articles_seo ON articles USING GIN(seo);
 CREATE INDEX IF NOT EXISTS idx_articles_related_articles ON articles USING GIN(related_articles);
 
--- Create updated_at trigger function
-CREATE OR REPLACE FUNCTION update_updated_at_column()
+-- Create updated_date trigger function
+CREATE OR REPLACE FUNCTION update_updated_date_column()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.updated_at = NOW();
+    NEW.updated_date = NOW();
     RETURN NEW;
 END;
 $$ language 'plpgsql';
 
--- Apply updated_at trigger to articles table
-CREATE TRIGGER update_articles_updated_at BEFORE UPDATE ON articles
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+-- Apply updated_date trigger to articles table
+CREATE TRIGGER update_articles_updated_date BEFORE UPDATE ON articles
+    FOR EACH ROW EXECUTE FUNCTION update_updated_date_column();
 
 -- Sample data for testing (optional)
 -- INSERT INTO articles (slug, title, author, category, excerpt, content, read_time, tags) VALUES

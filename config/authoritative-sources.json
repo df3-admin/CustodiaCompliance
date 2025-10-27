@@ -1,0 +1,79 @@
+{
+  "compliance": {
+    "soc2": [
+      "https://www.aicpa.org/soc4so",
+      "https://us.aicpa.org/interestareas/frc/assuranceadvisoryservices/serviceorganization-smanagement",
+      "https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/aicpasoc2report.html"
+    ],
+    "iso27001": [
+      "https://www.iso.org/isoiec-27001-information-security.html",
+      "https://www.nist.gov/",
+      "https://www.iso.org/isoiec-27001-information-security.html"
+    ],
+    "hipaa": [
+      "https://www.hhs.gov/hipaa/",
+      "https://www.hhs.gov/hipaa/for-professionals/security/",
+      "https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/"
+    ],
+    "pci": [
+      "https://www.pcisecuritystandards.org/",
+      "https://www.pcisecuritystandards.org/document_library/",
+      "https://www.pcisecuritystandards.org/merchants/"
+    ],
+    "gdpr": [
+      "https://gdpr.eu/",
+      "https://ec.europa.eu/info/law/law-topic/data-protection_en",
+      "https://gdpr-info.eu/"
+    ],
+    "cmmc": [
+      "https://www.cmmcab.org/",
+      "https://www.acq.osd.mil/cmmc/",
+      "https://www.nist.gov/cyberframework"
+    ],
+    "fedramp": [
+      "https://www.fedramp.gov/",
+      "https://www.fedramp.gov/assets/resources/documents/FedRAMP_Authorization_Act.pdf",
+      "https://www.fedramp.gov/assets/resources/documents/FedRAMP_Security_Assessment_Framework.pdf"
+    ]
+  },
+  "statistics": [
+    "https://www.gartner.com/",
+    "https://www.forrester.com/",
+    "https://www.idc.com/",
+    "https://www.statista.com/",
+    "https://www.mckinsey.com/",
+    "https://www.deloitte.com/",
+    "https://www.pwc.com/"
+  ],
+  "security": [
+    "https://www.csoonline.com/",
+    "https://www.darkreading.com/",
+    "https://www.securitymagazine.com/",
+    "https://www.infosecurity-magazine.com/",
+    "https://www.helpnetsecurity.com/",
+    "https://krebsonsecurity.com/",
+    "https://www.schneier.com/"
+  ],
+  "government": [
+    "https://www.nist.gov/",
+    "https://www.cisa.gov/",
+    "https://www.ftc.gov/",
+    "https://www.sec.gov/",
+    "https://www.fcc.gov/",
+    "https://www.dhs.gov/"
+  ],
+  "industry": [
+    "https://www.complianceweek.com/",
+    "https://www.riskmanagementmonitor.com/",
+    "https://www.governance.com/",
+    "https://www.auditnet.org/",
+    "https://www.iia.org.uk/"
+  ],
+  "research": [
+    "https://www.ponemon.org/",
+    "https://www.sans.org/",
+    "https://www.isc2.org/",
+    "https://www.isaca.org/",
+    "https://www.cert.org/"
+  ]
+}

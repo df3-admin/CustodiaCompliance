@@ -1,0 +1,496 @@
+{
+  "highValueTopics": [
+    {
+      "priority": 1,
+      "topic": "SOC 2 Compliance Checklist 2025",
+      "primaryKeyword": "SOC 2 compliance checklist",
+      "secondaryKeywords": [
+        "SOC 2 audit preparation",
+        "SOC 2 Type II checklist",
+        "SOC 2 requirements",
+        "SOC 2 implementation guide",
+        "SOC 2 compliance cost",
+        "SOC 2 timeline",
+        "SOC 2 tools"
+      ],
+      "searchVolume": "15,000+",
+      "competitionLevel": "high",
+      "buyerIntent": "high",
+      "expectedTraffic": "2,000-5,000/month",
+      "whyOpportunity": "High search volume, many weak existing articles, strong buyer intent",
+      "competitorUrls": [
+        "https://www.splunk.com/en_us/blog/learn/soc-2-compliance-checklist.html",
+        "https://drata.com/grc-central/soc-2/compliance-checklist",
+        "https://auditboard.com/blog/soc-2-compliance-checklist",
+        "https://www.hipaajournal.com/soc-2-compliance-checklist/"
+      ]
+    },
+    {
+      "priority": 2,
+      "topic": "SOC 2 Type I vs Type II: Complete Comparison Guide 2025",
+      "primaryKeyword": "SOC 2 Type I vs Type II",
+      "secondaryKeywords": [
+        "SOC 2 Type I vs Type II differences",
+        "SOC 2 Type I vs Type II cost",
+        "SOC 2 Type I vs Type II timeline",
+        "SOC 2 Type I vs Type II requirements",
+        "SOC 2 Type I vs Type II audit",
+        "SOC 2 Type I vs Type II controls"
+      ],
+      "searchVolume": "8,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,200-2,500/month",
+      "whyOpportunity": "Common decision point, comparison content performs well",
+      "competitorUrls": [
+        "https://www.vanta.com/resources/soc-2-type-i-vs-type-ii",
+        "https://www.secureframe.com/blog/soc-2-type-i-vs-type-ii",
+        "https://www.drata.com/grc-central/soc-2/soc-2-type-i-vs-type-ii"
+      ]
+    },
+    {
+      "priority": 3,
+      "topic": "SOC 2 Controls List: Complete Implementation Guide 2025",
+      "primaryKeyword": "SOC 2 controls list",
+      "secondaryKeywords": [
+        "SOC 2 controls",
+        "SOC 2 Trust Service Criteria",
+        "SOC 2 control requirements",
+        "SOC 2 control implementation",
+        "SOC 2 control testing",
+        "SOC 2 control documentation"
+      ],
+      "searchVolume": "6,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "900-1,800/month",
+      "whyOpportunity": "Detailed implementation guidance needed",
+      "competitorUrls": [
+        "https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/aicpa-soc-2-report.html",
+        "https://www.soc2.com/soc-2-controls",
+        "https://www.trustcloud.com/blog/soc-2-controls"
+      ]
+    },
+    {
+      "priority": 4,
+      "topic": "SOC 2 Cost Breakdown: Complete Pricing Guide 2025",
+      "primaryKeyword": "SOC 2 cost",
+      "secondaryKeywords": [
+        "SOC 2 pricing",
+        "SOC 2 audit cost",
+        "SOC 2 implementation cost",
+        "SOC 2 Type II cost",
+        "SOC 2 compliance cost",
+        "SOC 2 budget"
+      ],
+      "searchVolume": "12,000+",
+      "competitionLevel": "high",
+      "buyerIntent": "very high",
+      "expectedTraffic": "1,500-3,000/month",
+      "whyOpportunity": "High buyer intent, cost transparency needed",
+      "competitorUrls": [
+        "https://www.vanta.com/resources/soc-2-cost",
+        "https://www.secureframe.com/blog/soc-2-cost",
+        "https://www.drata.com/grc-central/soc-2/soc-2-cost"
+      ]
+    },
+    {
+      "priority": 5,
+      "topic": "SOC 2 Timeline: Complete Implementation Roadmap 2025",
+      "primaryKeyword": "SOC 2 timeline",
+      "secondaryKeywords": [
+        "SOC 2 implementation timeline",
+        "SOC 2 audit timeline",
+        "SOC 2 Type II timeline",
+        "SOC 2 preparation timeline",
+        "SOC 2 certification timeline",
+        "SOC 2 project timeline"
+      ],
+      "searchVolume": "7,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,000-2,000/month",
+      "whyOpportunity": "Project planning guidance needed",
+      "competitorUrls": [
+        "https://www.vanta.com/resources/soc-2-timeline",
+        "https://www.secureframe.com/blog/soc-2-timeline",
+        "https://www.drata.com/grc-central/soc-2/soc-2-timeline"
+      ]
+    },
+    {
+      "priority": 6,
+      "topic": "SOC 2 for Startups: Complete Guide 2025",
+      "primaryKeyword": "SOC 2 for startups",
+      "secondaryKeywords": [
+        "SOC 2 startup guide",
+        "SOC 2 for small companies",
+        "SOC 2 for SaaS startups",
+        "SOC 2 startup cost",
+        "SOC 2 startup timeline",
+        "SOC 2 startup requirements"
+      ],
+      "searchVolume": "5,000+",
+      "competitionLevel": "low",
+      "buyerIntent": "very high",
+      "expectedTraffic": "800-1,500/month",
+      "whyOpportunity": "Niche market, high buyer intent",
+      "competitorUrls": [
+        "https://www.vanta.com/resources/soc-2-for-startups",
+        "https://www.secureframe.com/blog/soc-2-for-startups",
+        "https://www.drata.com/grc-central/soc-2/soc-2-for-startups"
+      ]
+    },
+    {
+      "priority": 7,
+      "topic": "ISO 27001 Implementation Guide 2025",
+      "primaryKeyword": "ISO 27001 implementation guide",
+      "secondaryKeywords": [
+        "ISO 27001 checklist",
+        "ISO 27001 requirements",
+        "ISO 27001 certification process",
+        "ISO 27001 cost",
+        "ISO 27001 timeline",
+        "ISO 27001 vs SOC 2"
+      ],
+      "searchVolume": "12,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,500-3,000/month",
+      "whyOpportunity": "Growing international compliance needs, medium competition",
+      "competitorUrls": [
+        "https://www.iso.org/isoiec-27001-information-security.html",
+        "https://www.nist.gov/",
+        "https://www.csoonline.com/article/2130877/iso-27001-guide.html"
+      ]
+    },
+    {
+      "priority": 8,
+      "topic": "ISO 27001 Controls: Complete Implementation Guide 2025",
+      "primaryKeyword": "ISO 27001 controls",
+      "secondaryKeywords": [
+        "ISO 27001 control requirements",
+        "ISO 27001 control implementation",
+        "ISO 27001 Annex A controls",
+        "ISO 27001 control testing",
+        "ISO 27001 control documentation",
+        "ISO 27001 control mapping"
+      ],
+      "searchVolume": "8,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,200-2,500/month",
+      "whyOpportunity": "Detailed control guidance needed",
+      "competitorUrls": [
+        "https://www.iso.org/isoiec-27001-information-security.html",
+        "https://www.nist.gov/cyberframework",
+        "https://www.csoonline.com/article/2130877/iso-27001-guide.html"
+      ]
+    },
+    {
+      "priority": 9,
+      "topic": "ISO 27001 vs SOC 2: Complete Comparison Guide 2025",
+      "primaryKeyword": "ISO 27001 vs SOC 2",
+      "secondaryKeywords": [
+        "ISO 27001 vs SOC 2 comparison",
+        "ISO 27001 vs SOC 2 differences",
+        "ISO 27001 vs SOC 2 cost",
+        "ISO 27001 vs SOC 2 requirements",
+        "ISO 27001 vs SOC 2 certification",
+        "which compliance standard"
+      ],
+      "searchVolume": "7,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "900-1,800/month",
+      "whyOpportunity": "Common decision point, comparison content performs well",
+      "competitorUrls": [
+        "https://www.splunk.com/",
+        "https://www.vanta.com/",
+        "https://www.secureframe.com/"
+      ]
+    },
+    {
+      "priority": 10,
+      "topic": "HIPAA Compliance for Healthtech Startups",
+      "primaryKeyword": "HIPAA compliance for startups",
+      "secondaryKeywords": [
+        "HIPAA compliance checklist",
+        "HIPAA requirements",
+        "healthtech compliance",
+        "HIPAA implementation",
+        "HIPAA cost",
+        "healthcare data security"
+      ],
+      "searchVolume": "8,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "very high",
+      "expectedTraffic": "1,200-2,500/month",
+      "whyOpportunity": "Growing healthtech sector, high buyer intent, specific niche",
+      "competitorUrls": [
+        "https://www.hhs.gov/hipaa/",
+        "https://www.healthit.gov/",
+        "https://www.healthcareitnews.com/"
+      ]
+    },
+    {
+      "priority": 11,
+      "topic": "HIPAA Compliance Checklist: Complete Guide 2025",
+      "primaryKeyword": "HIPAA compliance checklist",
+      "secondaryKeywords": [
+        "HIPAA checklist",
+        "HIPAA requirements checklist",
+        "HIPAA compliance requirements",
+        "HIPAA implementation checklist",
+        "HIPAA audit checklist",
+        "HIPAA compliance steps"
+      ],
+      "searchVolume": "10,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,500-3,000/month",
+      "whyOpportunity": "High search volume, practical guidance needed",
+      "competitorUrls": [
+        "https://www.hhs.gov/hipaa/for-professionals/index.html",
+        "https://www.hipaajournal.com/hipaa-compliance-checklist/",
+        "https://www.hipaacompliance.com/"
+      ]
+    },
+    {
+      "priority": 12,
+      "topic": "HIPAA Business Associate Agreement: Complete Guide 2025",
+      "primaryKeyword": "HIPAA business associate agreement",
+      "secondaryKeywords": [
+        "HIPAA BAA",
+        "HIPAA business associate",
+        "HIPAA BAA requirements",
+        "HIPAA BAA template",
+        "HIPAA BAA checklist",
+        "HIPAA business associate compliance"
+      ],
+      "searchVolume": "6,000+",
+      "competitionLevel": "low",
+      "buyerIntent": "high",
+      "expectedTraffic": "900-1,800/month",
+      "whyOpportunity": "Specific compliance requirement, low competition",
+      "competitorUrls": [
+        "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html",
+        "https://www.hipaajournal.com/business-associate-agreement/",
+        "https://www.hipaacompliance.com/"
+      ]
+    },
+    {
+      "priority": 13,
+      "topic": "PCI DSS Compliance Guide 2025",
+      "primaryKeyword": "PCI DSS compliance guide",
+      "secondaryKeywords": [
+        "PCI DSS requirements",
+        "PCI DSS checklist",
+        "PCI DSS implementation",
+        "PCI DSS cost",
+        "PCI DSS timeline",
+        "payment card security"
+      ],
+      "searchVolume": "10,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,000-2,000/month",
+      "whyOpportunity": "E-commerce growth, payment processing needs",
+      "competitorUrls": [
+        "https://www.pcisecuritystandards.org/",
+        "https://www.trustwave.com/",
+        "https://www.veracode.com/"
+      ]
+    },
+    {
+      "priority": 14,
+      "topic": "PCI DSS SAQ Guide: Complete Self-Assessment Questionnaire Guide 2025",
+      "primaryKeyword": "PCI DSS SAQ",
+      "secondaryKeywords": [
+        "PCI DSS SAQ guide",
+        "PCI DSS self-assessment questionnaire",
+        "PCI DSS SAQ requirements",
+        "PCI DSS SAQ types",
+        "PCI DSS SAQ checklist",
+        "PCI DSS SAQ compliance"
+      ],
+      "searchVolume": "8,000+",
+      "competitionLevel": "low",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,200-2,500/month",
+      "whyOpportunity": "Specific compliance requirement, low competition",
+      "competitorUrls": [
+        "https://www.pcisecuritystandards.org/document_library/",
+        "https://www.pcicomplianceguide.org/",
+        "https://www.controlcase.com/pci-dss-compliance/"
+      ]
+    },
+    {
+      "priority": 15,
+      "topic": "GDPR Compliance Checklist for US Companies",
+      "primaryKeyword": "GDPR compliance for US companies",
+      "secondaryKeywords": [
+        "GDPR requirements",
+        "GDPR checklist",
+        "GDPR implementation",
+        "GDPR cost",
+        "GDPR fines",
+        "data privacy compliance"
+      ],
+      "searchVolume": "6,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "800-1,500/month",
+      "whyOpportunity": "US companies expanding to EU, high fines create urgency",
+      "competitorUrls": [
+        "https://gdpr.eu/",
+        "https://www.gdpr.org/",
+        "https://www.privacy-regulation.eu/"
+      ]
+    },
+    {
+      "priority": 16,
+      "topic": "GDPR Data Mapping: Complete Guide 2025",
+      "primaryKeyword": "GDPR data mapping",
+      "secondaryKeywords": [
+        "GDPR data inventory",
+        "GDPR data mapping requirements",
+        "GDPR data mapping process",
+        "GDPR data mapping tools",
+        "GDPR data mapping checklist",
+        "GDPR data mapping template"
+      ],
+      "searchVolume": "4,000+",
+      "competitionLevel": "low",
+      "buyerIntent": "high",
+      "expectedTraffic": "600-1,200/month",
+      "whyOpportunity": "Specific compliance requirement, low competition",
+      "competitorUrls": [
+        "https://gdpr.eu/checklist/",
+        "https://gdpr-info.eu/",
+        "https://www.privacyshield.gov/GDPR/"
+      ]
+    },
+    {
+      "priority": 17,
+      "topic": "FedRAMP Authorization Process Guide",
+      "primaryKeyword": "FedRAMP authorization process",
+      "secondaryKeywords": [
+        "FedRAMP requirements",
+        "FedRAMP compliance",
+        "FedRAMP implementation",
+        "FedRAMP cost",
+        "FedRAMP timeline",
+        "cloud security compliance"
+      ],
+      "searchVolume": "3,000+",
+      "competitionLevel": "low",
+      "buyerIntent": "very high",
+      "expectedTraffic": "500-1,000/month",
+      "whyOpportunity": "Government cloud market, complex process, high-value contracts",
+      "competitorUrls": [
+        "https://www.fedramp.gov/",
+        "https://www.gsa.gov/",
+        "https://www.cloud.gov/"
+      ]
+    },
+    {
+      "priority": 18,
+      "topic": "CMMC Compliance Guide for Defense Contractors",
+      "primaryKeyword": "CMMC compliance guide",
+      "secondaryKeywords": [
+        "CMMC requirements",
+        "CMMC certification",
+        "CMMC implementation",
+        "CMMC cost",
+        "CMMC timeline",
+        "defense contractor compliance"
+      ],
+      "searchVolume": "4,000+",
+      "competitionLevel": "low",
+      "buyerIntent": "very high",
+      "expectedTraffic": "600-1,200/month",
+      "whyOpportunity": "Niche market, low competition, high-value contracts",
+      "competitorUrls": [
+        "https://www.cmmcab.org/",
+        "https://www.acq.osd.mil/cmmc/",
+        "https://www.nist.gov/cyberframework"
+      ]
+    },
+    {
+      "priority": 19,
+      "topic": "NIST Cybersecurity Framework Implementation",
+      "primaryKeyword": "NIST cybersecurity framework implementation",
+      "secondaryKeywords": [
+        "NIST framework",
+        "NIST CSF",
+        "NIST implementation",
+        "NIST compliance",
+        "cybersecurity framework",
+        "NIST guidelines"
+      ],
+      "searchVolume": "5,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "700-1,400/month",
+      "whyOpportunity": "Government mandate, growing adoption",
+      "competitorUrls": [
+        "https://www.nist.gov/cyberframework",
+        "https://www.nist.gov/",
+        "https://www.cisa.gov/"
+      ]
+    },
+    {
+      "priority": 20,
+      "topic": "HITRUST Certification: Complete Guide 2025",
+      "primaryKeyword": "HITRUST certification",
+      "secondaryKeywords": [
+        "HITRUST requirements",
+        "HITRUST implementation",
+        "HITRUST cost",
+        "HITRUST timeline",
+        "HITRUST compliance",
+        "healthcare security certification"
+      ],
+      "searchVolume": "3,000+",
+      "competitionLevel": "low",
+      "buyerIntent": "very high",
+      "expectedTraffic": "500-1,000/month",
+      "whyOpportunity": "Healthcare-specific certification, high-value contracts",
+      "competitorUrls": [
+        "https://hitrustalliance.net/",
+        "https://www.hitrustalliance.net/certification/",
+        "https://www.hitrustalliance.net/assurance/"
+      ]
+    },
+    {
+      "priority": 21,
+      "topic": "Compliance Automation Tools Comparison 2025",
+      "primaryKeyword": "compliance automation tools",
+      "secondaryKeywords": [
+        "SOC 2 automation tools",
+        "compliance software",
+        "GRC tools",
+        "compliance management software",
+        "automated compliance",
+        "compliance platform comparison"
+      ],
+      "searchVolume": "8,000+",
+      "competitionLevel": "medium",
+      "buyerIntent": "high",
+      "expectedTraffic": "1,000-2,000/month",
+      "whyOpportunity": "Tool comparison content ranks well, high buyer intent",
+      "competitorUrls": [
+        "https://www.drata.com/",
+        "https://www.vanta.com/",
+        "https://www.secureframe.com/",
+        "https://www.trustcloud.com/"
+      ]
+    }
+  ],
+  "totalExpectedTraffic": "25,000-50,000/month",
+  "targetKeywords": 150,
+  "expectedRankings": {
+    "top3": 40,
+    "top10": 100
+  }
+}

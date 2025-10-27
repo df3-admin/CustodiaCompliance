@@ -2,18 +2,18 @@ import { MapPin, Phone, Mail, MessageCircle, BookOpen } from "lucide-react";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
-// Import logo as base64
-const custodiaLogo = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjMTU2NUYxIi8+Cjx0ZXh0IHg9IjEwIiB5PSIyNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPkN1c3RvZGlhPC90ZXh0Pgo8L3N2Zz4K";
+// Import actual logo image
+import custodiaLogo from "../../assets/custodia logo transparent.png";
 
 const Footer = () => {
   return (
     <footer id="contact" className="bg-[hsl(207,89%,15%)] text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
           {/* Logo & Description */}
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <img src={custodiaLogo} alt="Custodia, LLC" className="h-24 sm:h-28 lg:h-32" />
+              <img src={custodiaLogo} alt="Custodia, LLC" className="h-16 sm:h-20 md:h-24 lg:h-28 brightness-0" />
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
               Your complete GRC department for software companies. Get enterprise-ready with SOC 2, ISO 27001, HIPAA, PCI DSS, and more. Expert team handles everything - you focus on sales.
@@ -24,16 +24,16 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Blog & Resources</h4>
             <div className="space-y-2">
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="/blog">Latest Articles</a>
               </Button>
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="/blog">Compliance Guides</a>
               </Button>
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="/blog">Best Practices</a>
               </Button>
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="/blog">Industry Insights</a>
               </Button>
             </div>
@@ -123,19 +123,19 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Legal</h4>
             <div className="space-y-2 text-sm text-gray-300">
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="https://custodiallc.com/privacy-policy">Privacy Policy</a>
               </Button>
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="https://custodiallc.com/terms-of-service">Terms of Service</a>
               </Button>
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="https://custodiallc.com/cookie-policy">Cookie Policy</a>
               </Button>
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="https://custodiallc.com/accessibility-statement">Accessibility Statement</a>
               </Button>
-              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-0 h-auto justify-start" asChild>
+              <Button variant="link" size="sm" className="text-gray-300 hover:text-blue-400 p-2 h-auto justify-start min-h-[44px]" asChild>
                 <a href="https://custodiallc.com/do-not-sell">Do Not Sell My Info</a>
               </Button>
               <div className="pt-2">

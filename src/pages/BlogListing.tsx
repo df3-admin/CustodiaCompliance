@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Card, CardDescription, CardTitle } from '../components/ui/card';
+import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '../components/ui/tabs';
@@ -11,6 +11,7 @@ import { Calendar, Clock, User, ArrowRight, BookOpen, TrendingUp, Star, External
 import { Article } from '../types/article';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import ComplianceChat from '../components/ComplianceChat';
 
 
 // Mobile detection hook
@@ -266,7 +267,7 @@ const BlogListing = () => {
                         key={category.name}
                         variant={selectedCategory === category.name ? "default" : "outline"}
                         onClick={() => setSelectedCategory(category.name)}
-                        className={`flex items-center gap-1.5 whitespace-nowrap px-3 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                        className={`flex items-center gap-1.5 whitespace-nowrap px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 min-h-[44px] ${
                           selectedCategory === category.name ? 'bg-blue-600 text-white shadow-md' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                         }`}
                       >
@@ -290,9 +291,9 @@ const BlogListing = () => {
                     <TabsTrigger
                       key={category.name}
                       value={category.name}
-                      className="relative flex items-center gap-1.5 whitespace-nowrap px-2 sm:px-3 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200"
+                      className="relative flex items-center gap-1.5 whitespace-nowrap px-4 py-3 rounded-full text-sm font-medium transition-all duration-200 min-h-[44px]"
                     >
-                      <span className="truncate max-w-[80px] sm:max-w-none">{category.name}</span>
+                      <span className="whitespace-nowrap">{category.name}</span>
                       <span className="inline-flex items-center justify-center min-w-[16px] h-4 px-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-600">
                         {category.count}
                       </span>
@@ -311,7 +312,7 @@ const BlogListing = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="px-4 py-3 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-[44px]"
             >
               <option value="newest">Newest First</option>
               <option value="oldest">Oldest First</option>
@@ -349,94 +350,109 @@ const BlogListing = () => {
                     const isFeatured = post.featured;
 
                     return (
-                      <Card key={post.id} className={`group hover:shadow-lg transition-all duration-300 bg-white/90 backdrop-blur-sm border-blue-100 ${isComprehensive ? 'ring-2 ring-blue-200' : ''}`}>
-                        <div className="flex flex-col md:flex-row">
-                          <div className="md:w-1/3">
-                            <Link to={`/blog/${post.slug}`} className="block">
-                              <div className="aspect-video md:aspect-square relative overflow-hidden cursor-pointer">
-                                <img
-                                  src={post.image}
-                                  alt={post.title}
-                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                                <div className="absolute top-3 left-3 flex flex-col gap-2">
-                                  <Badge className="bg-blue-600 text-white text-xs">
-                                    {post.category}
+                      <div key={post.id}>
+                        <Card className={`group hover:shadow-lg transition-all duration-300 bg-white/90 backdrop-blur-sm border-blue-100 ${isComprehensive ? 'ring-2 ring-blue-200' : ''}`}>
+                          <div className="flex flex-col md:flex-row">
+                            <div className="md:w-1/3">
+                              <Link to={`/blog/${post.slug}`} className="block">
+                                <div className="aspect-video md:aspect-square relative overflow-hidden cursor-pointer">
+                                  <img
+                                    src={post.image}
+                                    alt={post.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                                  <div className="absolute top-3 left-3 flex flex-col gap-2">
+                                    <Badge className="bg-blue-600 text-white text-xs">
+                                      {post.category}
+                                    </Badge>
+                                    {isComprehensive && (
+                                      <Badge className="bg-green-600 text-white text-xs flex items-center gap-1">
+                                        <Star className="w-3 h-3" />
+                                        Comprehensive
+                                      </Badge>
+                                    )}
+                                    {isFeatured && (
+                                      <Badge className="bg-purple-600 text-white text-xs flex items-center gap-1">
+                                        <TrendingUp className="w-3 h-3" />
+                                        Featured
+                                      </Badge>
+                                    )}
+                                  </div>
+                                </div>
+                              </Link>
+                            </div>
+                            <div className="md:w-2/3 p-6">
+                              <Link to={`/blog/${post.slug}`}>
+                                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-3 cursor-pointer hover:underline">
+                                  <ReactMarkdown 
+                                    components={{
+                                      p: ({ children }) => <span>{children}</span>
+                                    }}
+                                  >
+                                    {post.title}
+                                  </ReactMarkdown>
+                                </h3>
+                              </Link>
+                              <div className="text-gray-600 mb-4 line-clamp-3">
+                                <ReactMarkdown 
+                                  components={{
+                                    p: ({ children }) => <span>{children}</span>
+                                  }}
+                                >
+                                  {post.excerpt}
+                                </ReactMarkdown>
+                              </div>
+
+                              {/* Content indicators */}
+                              <div className="flex flex-wrap gap-2 mb-4">
+                                {Array.isArray(post.content) && post.content.some((block: any) => block.type === 'stats') && (
+                                  <Badge variant="outline" className="text-xs">
+                                    <TrendingUp className="w-3 h-3 mr-1" />
+                                    Statistics
                                   </Badge>
-                                  {isComprehensive && (
-                                    <Badge className="bg-green-600 text-white text-xs flex items-center gap-1">
-                                      <Star className="w-3 h-3" />
-                                      Comprehensive
-                                    </Badge>
-                                  )}
-                                  {isFeatured && (
-                                    <Badge className="bg-purple-600 text-white text-xs flex items-center gap-1">
-                                      <TrendingUp className="w-3 h-3" />
-                                      Featured
-                                    </Badge>
-                                  )}
-                                </div>
+                                )}
+                                {Array.isArray(post.content) && post.content.some((block: any) => block.type === 'table') && (
+                                  <Badge variant="outline" className="text-xs">
+                                    <ExternalLink className="w-3 h-3 mr-1" />
+                                    Data Tables
+                                  </Badge>
+                                )}
+                                {Array.isArray(post.content) && post.content.some((block: any) => block.type === 'steps') && (
+                                  <Badge variant="outline" className="text-xs">
+                                    <BookOpen className="w-3 h-3 mr-1" />
+                                    Step-by-Step
+                                  </Badge>
+                                )}
                               </div>
-                            </Link>
-                          </div>
-                          <div className="md:w-2/3 p-6">
-                            <Link to={`/blog/${post.slug}`}>
-                              <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-3 cursor-pointer hover:underline">
-                                <ReactMarkdown>{post.title}</ReactMarkdown>
-                              </CardTitle>
-                            </Link>
-                            <CardDescription className="text-gray-600 mb-4 line-clamp-3">
-                              <ReactMarkdown>{post.excerpt}</ReactMarkdown>
-                            </CardDescription>
 
-                            {/* Content indicators */}
-                            <div className="flex flex-wrap gap-2 mb-4">
-                              {Array.isArray(post.content) && post.content.some((block: any) => block.type === 'stats') && (
-                                <Badge variant="outline" className="text-xs">
-                                  <TrendingUp className="w-3 h-3 mr-1" />
-                                  Statistics
-                                </Badge>
-                              )}
-                              {Array.isArray(post.content) && post.content.some((block: any) => block.type === 'table') && (
-                                <Badge variant="outline" className="text-xs">
-                                  <ExternalLink className="w-3 h-3 mr-1" />
-                                  Data Tables
-                                </Badge>
-                              )}
-                              {Array.isArray(post.content) && post.content.some((block: any) => block.type === 'steps') && (
-                                <Badge variant="outline" className="text-xs">
-                                  <BookOpen className="w-3 h-3 mr-1" />
-                                  Step-by-Step
-                                </Badge>
-                              )}
-                            </div>
-
-                            <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                              <div className="flex items-center gap-4">
-                                <div className="flex items-center gap-1">
-                                  <User className="w-4 h-4" />
-                                  <span>{post.author}</span>
+                              <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <div className="flex items-center gap-4">
+                                  <div className="flex items-center gap-1">
+                                    <User className="w-4 h-4" />
+                                    <span>{post.author}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1">
+                                    <Calendar className="w-4 h-4" />
+                                    <span>{new Date(post.published_date).toLocaleDateString()}</span>
+                                  </div>
                                 </div>
                                 <div className="flex items-center gap-1">
-                                  <Calendar className="w-4 h-4" />
-                                  <span>{new Date(post.published_date).toLocaleDateString()}</span>
+                                  <Clock className="w-4 h-4" />
+                                  <span>{post.readTime}</span>
                                 </div>
                               </div>
-                              <div className="flex items-center gap-1">
-                                <Clock className="w-4 h-4" />
-                                <span>{post.readTime}</span>
-                              </div>
+                              <Link to={`/blog/${post.slug}`}>
+                                <Button variant="outline" className="group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors min-h-[44px] px-4 py-2">
+                                  Read More
+                                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                              </Link>
                             </div>
-                            <Link to={`/blog/${post.slug}`}>
-                              <Button variant="outline" className="group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors">
-                                Read More
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                              </Button>
-                            </Link>
                           </div>
-                        </div>
-                      </Card>
+                        </Card>
+                        
+                      </div>
                     );
                   })}
                 </div>
@@ -449,7 +465,7 @@ const BlogListing = () => {
                       size="sm"
                       onClick={() => setCurrentPage(currentPage - 1)}
                       disabled={currentPage === 1}
-                      className="px-4 py-2"
+                      className="px-4 py-3 min-h-[44px] min-w-[44px]"
                     >
                       Previous
                     </Button>
@@ -473,7 +489,7 @@ const BlogListing = () => {
                             variant={currentPage === pageNum ? "default" : "outline"}
                             size="sm"
                             onClick={() => setCurrentPage(pageNum)}
-                            className={`px-3 py-1 min-w-[40px] ${
+                            className={`px-3 py-2 min-w-[44px] min-h-[44px] ${
                               currentPage === pageNum
                                 ? 'bg-blue-600 text-white'
                                 : 'bg-white text-gray-700 hover:bg-gray-50'
@@ -490,7 +506,7 @@ const BlogListing = () => {
                       size="sm"
                       onClick={() => setCurrentPage(currentPage + 1)}
                       disabled={currentPage === totalPages}
-                      className="px-4 py-2"
+                      className="px-4 py-3 min-h-[44px] min-w-[44px]"
                     >
                       Next
                     </Button>
@@ -511,12 +527,9 @@ const BlogListing = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-16 flex items-center justify-center min-h-[calc(100vh-4rem)] py-8">
-              {/* Placeholder for future sidebar content */}
-              <div className="text-center text-gray-500">
-                <BookOpen className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-                <p className="text-sm">Sidebar content can be added here</p>
-              </div>
+            <div className="sticky top-16 flex justify-center">
+              {/* AI Compliance Chat - Centered */}
+              <ComplianceChat />
             </div>
           </div>
         </div>

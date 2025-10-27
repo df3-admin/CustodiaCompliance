@@ -2,12 +2,19 @@
   "functions": {
     "api/articles.ts": {
       "maxDuration": 10
+    },
+    "api/sitemap.ts": {
+      "maxDuration": 10
     }
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
     }
   ],
   "headers": [
