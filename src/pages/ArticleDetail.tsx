@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, Shield, CheckCircle, AlertTriangle, Info, ExternalLink, Quote, ServerCrash, Star } from 'lucide-react';
@@ -734,22 +734,9 @@ const ArticleDetail = () => {
                         {relatedArticle.title}
                       </CardTitle>
                     </Link>
-                    <CardDescription className="line-clamp-3">
-                      {relatedArticle.excerpt}
-                    </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-1">
-                          <User className="w-4 h-4" />
-                          <span>{relatedArticle.author}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          <span>{new Date(relatedArticle.published_date).toLocaleDateString()}</span>
-                        </div>
-                      </div>
+                    <div className="flex items-center justify-end text-sm text-gray-500 mb-4">
                       <div className="flex items-center gap-1">
                         <Clock className="w-4 h-4" />
                         <span>{relatedArticle.readTime}</span>

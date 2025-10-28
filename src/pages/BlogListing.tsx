@@ -7,7 +7,7 @@ import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
-import { Calendar, Clock, User, ArrowRight, BookOpen, TrendingUp, Star, ExternalLink } from 'lucide-react';
+import { Clock, ArrowRight, BookOpen, TrendingUp, Star, ExternalLink } from 'lucide-react';
 import { Article } from '../types/article';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -394,15 +394,6 @@ const BlogListing = () => {
                                   </ReactMarkdown>
                                 </h3>
                               </Link>
-                              <div className="text-gray-600 mb-4 line-clamp-3">
-                                <ReactMarkdown 
-                                  components={{
-                                    p: ({ children }) => <span>{children}</span>
-                                  }}
-                                >
-                                  {post.excerpt}
-                                </ReactMarkdown>
-                              </div>
 
                               {/* Content indicators */}
                               <div className="flex flex-wrap gap-2 mb-4">
@@ -426,17 +417,7 @@ const BlogListing = () => {
                                 )}
                               </div>
 
-                              <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                                <div className="flex items-center gap-4">
-                                  <div className="flex items-center gap-1">
-                                    <User className="w-4 h-4" />
-                                    <span>{post.author}</span>
-                                  </div>
-                                  <div className="flex items-center gap-1">
-                                    <Calendar className="w-4 h-4" />
-                                    <span>{new Date(post.published_date).toLocaleDateString()}</span>
-                                  </div>
-                                </div>
+                              <div className="flex items-center justify-end text-sm text-gray-500 mb-4">
                                 <div className="flex items-center gap-1">
                                   <Clock className="w-4 h-4" />
                                   <span>{post.readTime}</span>

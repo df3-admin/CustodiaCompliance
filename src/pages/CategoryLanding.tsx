@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { Card, CardContent, CardHeader } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { Calendar, Clock, User, ArrowRight, BookOpen, Star, ExternalLink, Shield, CheckCircle } from 'lucide-react';
+import { Clock, ArrowRight, BookOpen, Star, ExternalLink, Shield, CheckCircle } from 'lucide-react';
 import { Article } from '../types/article';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -374,28 +374,9 @@ const CategoryLanding = ({ category }: CategoryLandingProps) => {
                           </ReactMarkdown>
                         </h3>
                       </Link>
-                      <div className="text-gray-600 mb-4 line-clamp-3">
-                        <ReactMarkdown 
-                          components={{
-                            p: ({ children }) => <span>{children}</span>
-                          }}
-                        >
-                          {post.excerpt}
-                        </ReactMarkdown>
-                      </div>
                     </CardHeader>
                     <CardContent>
-                      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                        <div className="flex items-center gap-4">
-                          <div className="flex items-center gap-1">
-                            <User className="w-4 h-4" />
-                            <span>{post.author}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            <span>{new Date(post.published_date).toLocaleDateString()}</span>
-                          </div>
-                        </div>
+                      <div className="flex items-center justify-end text-sm text-gray-500 mb-4">
                         <div className="flex items-center gap-1">
                           <Clock className="w-4 h-4" />
                           <span>{post.readTime}</span>
